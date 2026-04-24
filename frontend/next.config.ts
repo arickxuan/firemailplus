@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://fmailbg.arick.top/api/:path*',
+        destination: 'https://fmailbgv.arick.top/api/:path*',
       },
     ];
   },
