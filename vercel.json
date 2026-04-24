@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend && pnpm build",
+  "installCommand": "cd frontend && pnpm install",
+  "outputDirectory": ".next"
+  "functions": {
+    "backend/cmd/firemail/main.go": {
+      "maxDuration": 300
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://fmailbgv.arick.top/api/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/admin/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
